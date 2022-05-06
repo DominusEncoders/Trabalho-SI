@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="barChart" height="140"></canvas>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="js/pages/process_archive.js"></script>
+      <script>
+        var ctx = document.getElementById("barChart");
+        var myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["label 1", "label 2"], 
+                datasets: [{
+                    label: "My Label",
+                    backgroundColor: "rgba(159,170,174,0.8)",
+                    borderWidth: 1,
+                    hoverBackgroundColor: "rgba(232,105,90,0.8)",
+                    hoverBorderColor: "orange",
+                    scaleStepWidth: 1,
+                      data: [4, 5]
+                }]
+            },
+            options: { 
+                legend: {
+                    labels: {
+                        fontColor: "blue",
+                        fontSize: 18
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "green",
+                            fontSize: 18,
+                            stepSize: 1,
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "purple",
+                            fontSize: 14,
+                            stepSize: 1,
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+      </script>
+</body>
+</html>
